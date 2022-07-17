@@ -36,7 +36,7 @@ export class CrearUsuarioComponent implements OnInit {
     if (this.crearUsuario.invalid){
       return;
     }
-    this.UsuariosService.agregarUsuario(usuarios).subscribre
+    // this.UsuariosService.agregarUsuario(usuarios).subscribre
     // console.log(this.crearUsuario);
   }
 
