@@ -10,10 +10,10 @@
 
 <div class="container">
   <div class="card">
-    <div class="card-body">
+    <div class="card-body" >
       <span class="h3">Usuarios</span>  
       <button mat-raised-button color="accent" class="botonAgregar" routerLink="/dashboard/crear-usuario">Crear Usuario</button>
-      <table class="table">
+      <table class="table"  >
         <thead>
           <tr>
             <th >ID</th>
@@ -23,16 +23,19 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th>1</th>
-            <td>PEPITOUSER</td>
-            <td>KAMDK@GMAIL.COM</td>
+          <tr *ngFor="let user of usuariosList">
+            <th>{{user.id}}</th>
+            <td>{{user.username}}</td>
+            <td>{{user.email}}</td>
             <td>
               <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon">
                 <mat-icon>edit</mat-icon>
               </button>
               <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon">
                 <mat-icon>delete</mat-icon>
+              </button>
+              <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon" (click)="getDetallesUsuarios(user.id)">
+                <mat-icon>info</mat-icon>
               </button>
             </td>
           </tr>
