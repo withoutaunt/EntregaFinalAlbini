@@ -7,14 +7,12 @@
   h1{
     color: rgb(177, 84, 169);
   }
-mat-card{
-  background-color: aqua;
-  width: 100%;
 
-  max-width: 330px;
+form{  
   text-align: center;
-  margin-left: 450px;
-  margin-top: 60px;
+ 
+  
+  
 }
 button{
   width: 50%;
