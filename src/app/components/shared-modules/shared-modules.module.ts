@@ -5,6 +5,15 @@ import { MatInputModule } from '@angular/material/input';
 import {MatSelectModule, MatSelectTrigger} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatIconModule} from '@angular/material/icon';
+import {MatTableModule} from '@angular/material/table';
+import {MatCardModule} from '@angular/material/card';
+import { ReactiveFormsModule } from '@angular/forms';
+
+
+
 
 
 @NgModule({
@@ -15,7 +24,13 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatInputModule,
     MatSelectModule,
     MatButtonModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatToolbarModule,
+    MatSidenavModule, 
+    MatIconModule,
+    MatTableModule,
+    MatCardModule,
+    ReactiveFormsModule
   ],
   exports:[
     CommonModule,
@@ -23,7 +38,13 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatInputModule,
     MatSelectModule,
     MatButtonModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatTableModule,
+    MatCardModule,
+    ReactiveFormsModule
   ]
 })
 export class SharedComponentsModule { }

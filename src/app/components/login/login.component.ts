@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatSnackBar } from '@angular/material/snack-bar';
+
 import { Router } from '@angular/router';
 
 
@@ -20,18 +20,22 @@ export class LoginComponent implements OnInit {
 
     })
   }
+  //route to adminlogin
+  goToPage(pageName:string):void{
+    this.router.navigate(['{$pageName}']);
+  }
 
   ngOnInit(): void {
   }
   
-  ingresar(){      //fijarse como hacer ahora con la validaciond el dropdown
+  ingresar(){     
     console.log(this.form);
     const usuario=this.form.value.usuario;
     const password=this.form.value.password;
 
 
     if (usuario == 'adminlogin' && password =='123456'){
-      this.router.navigate(['layout']);
+      this.router.navigate(['dashboard']);
 
     }else{
       //ponerle un cartelito segun admin/user

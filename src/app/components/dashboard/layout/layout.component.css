@@ -1,0 +1,25 @@
+mat-toolbar{
+    background-color: rgb(103, 79, 126);
+    color: aliceblue;
+}
+
+mat-sidenav-container{
+    height:100%;
+}
+
+.side{
+    display: table-row;
+    text-align: center;
+    width: 200px;
+    margin: 10PX;
+
+}
+mat-sidenav{
+    width: 230px;
+    background-color: rgba(100, 143, 192, 0.904);
+    display: table-row;
+    text-align: center;
+}
+.example-spacer {
+    flex: 1 1 auto;
+  }

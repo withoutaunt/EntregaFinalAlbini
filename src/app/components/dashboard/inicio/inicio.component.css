@@ -1,0 +1,10 @@
+body{
+    background-color:  rgba(100, 143, 192, 0.575);
+}
+img{
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}

@@ -3,11 +3,23 @@
     justify-content: center;
     height: 100%;
     align-items: center;
-    background-color: rgba(105, 159, 221, 0.904);
+    background-color: rgba(100, 143, 192, 0.904);
 }
 .login{
     width: 100%;
     max-width: 330px;
+    height: 450px;
     text-align: center;
     background-color: rgb(253, 247, 255);
+}
+
+h2{
+    color: rgba(100, 143, 192, 0.904);
+}
+
+button{
+    width: 50%;
+    text-align: center;
+
+
 }

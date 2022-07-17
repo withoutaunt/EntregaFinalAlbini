@@ -1,0 +1,32 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  h1{
+    color: rgb(177, 84, 169);
+  }
+mat-card{
+  background-color: aqua;
+  width: 100%;
+
+  max-width: 330px;
+  text-align: center;
+  margin-left: 450px;
+  margin-top: 60px;
+}
+button{
+  width: 50%;
+  margin: 5px;
+  text-align: center;
+
+}
+.cancel{
+  background-color: aliceblue;
+}
+span{
+  color: blueviolet;
+}
+
+

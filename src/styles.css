@@ -2,3 +2,9 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.toolNombres{
+
+    background-color: rgba(100, 143, 192, 0.904);
+    color: aliceblue;
+}
