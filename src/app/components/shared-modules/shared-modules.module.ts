@@ -11,6 +11,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatTableModule} from '@angular/material/table';
 import {MatCardModule} from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 
@@ -30,7 +31,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatIconModule,
     MatTableModule,
     MatCardModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDialogModule
+
   ],
   exports:[
     CommonModule,
@@ -44,7 +47,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatIconModule,
     MatTableModule,
     MatCardModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDialogModule
   ]
 })
 export class SharedComponentsModule { }
