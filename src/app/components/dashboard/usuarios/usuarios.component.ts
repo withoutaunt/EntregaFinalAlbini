@@ -27,23 +27,10 @@ export class UsuariosComponent implements OnInit {
   // dataSource = ELEMENT_DATA;
 
   ngOnInit(): void {
-    this.getUsuarios();
+    
   }
 
-  getUsuarios(){
-    this.UsuariosService.getUsuariosList().subscribe(
-      (data)=>{
-        this.usuariosList=data;
-      }
-    )
-  }
-  getDetallesUsuarios(id:number){
-    this.UsuariosService.getUsuarioSolo(id).subscribe(
-      (data)=>{
-       console.log(data)
-      }
-    )
-
-  }
+  
+  
 
 }

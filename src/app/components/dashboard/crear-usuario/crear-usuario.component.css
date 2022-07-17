@@ -15,7 +15,7 @@ form{
   
 }
 button{
-  width: 50%;
+  width: 10%;
   margin: 5px;
   text-align: center;
 
@@ -25,5 +25,8 @@ button{
 }
 span{
   color: blueviolet;
+}
+mat-form-field{
+  width: 100%;
 }
 

@@ -35,6 +35,8 @@
                 <input formControlName="adress" matInput>
             </mat-form-field>
             <span *ngIf="submitted && botonCrearUsuario.invalid" class="badge badge-danger">Por favor completar los datos requeridos</span>
-            <button mat-stroked-button color="accent" class="cancel" routerLink="/dashboard/usuarios">Cancelar</button>
+            <div mat-dialog-action [align]="'end'">
+            <button mat-stroked-button color="accent" class="cancel" mat-dialog-close>Cancelar</button>
             <button  type="submit" mat-raised-button color="accent" >Aceptar</button>
+            </div>
         </form>
