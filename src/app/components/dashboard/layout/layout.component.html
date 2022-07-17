@@ -19,10 +19,10 @@
 
 <mat-sidenav-container>
     <mat-sidenav [(opened)]="opened" mode="side">
-        <button class='side' mat-raised-button color="accent"><a routerLink="/dashboard/inicio">Inicio</a></button>
-        <button class='side' mat-raised-button color="accent"><a routerLink="/dashboard/alumnos">Alumnos</a></button>
-        <button class='side' mat-raised-button color="accent"><a routerLink="/dashboard/usuarios">Usuarios</a></button>
-        <button class='side' mat-raised-button color="accent"><a routerLink="/dashboard/cursos">Cursos</a></button>
+        <button class='side' mat-raised-button color="accent" routerLink="/dashboard/inicio"><a >Inicio</a></button>
+        <button class='side' mat-raised-button color="accent" routerLink="/dashboard/alumnos"><a >Alumnos</a></button>
+        <button class='side' mat-raised-button color="accent" routerLink="/dashboard/usuarios"><a >Usuarios</a></button>
+        <button class='side' mat-raised-button color="accent" routerLink="/dashboard/cursos"><a >Cursos</a></button>
     </mat-sidenav>
     <mat-sidenav-content>
         <router-outlet></router-outlet>

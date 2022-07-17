@@ -1,40 +1,40 @@
 <mat-card >
-        <form [formGroup]="crearUsuario" (ngSubmit)="agregarUsuario()">
+        <form [formGroup]="botonCrearUsuario" (ngSubmit)="agregarUsuario()">
             <h1>Administración de usuarios</h1>
             <!-- //CAJA NOMBRE DE USUARIO -->
             <mat-form-field appearance="fill">
                 <mat-label >Nombre de Usuario</mat-label>
-                <input formControlName="nombreUsuario" matInput>
+                <input formControlName="username" matInput>
             </mat-form-field>
             <!-- //CAJA TIPO DE USUARIO -->
             <mat-form-field appearance="fill">
                 <mat-label>Tipo de Usuario</mat-label>
-                <mat-select formControlName="tipoUsuario">
-                    <mat-option value="one">Usuario</mat-option>
-                    <mat-option value="two">Administrador</mat-option>
+                <mat-select formControlName="role">
+                    <mat-option value="usuario">Usuario</mat-option>
+                    <mat-option value="administrador">Administrador</mat-option>
                 </mat-select>
             </mat-form-field>
             <!-- //CAJA CONTRASEÑA DE USUARIO -->
             <mat-form-field appearance="fill">
                 <mat-label>Contraseña</mat-label>
-                <input formControlName="contraseñaUsuario" matInput>
+                <input formControlName="password" matInput>
             </mat-form-field>
             <!-- //CAJA EMAIL DE USUARIO -->
             <mat-form-field appearance="fill">
                 <mat-label>E-mail</mat-label>
-                <input formControlName="emailUsuario" matInput>
+                <input formControlName="email" matInput>
             </mat-form-field>
             <!-- //CAJA TELEFONO DE USUARIO -->
             <mat-form-field appearance="fill">
                 <mat-label>Telefono</mat-label>
-                <input formControlName="telefonoUsuario" matInput>
+                <input formControlName="phonenumber" matInput>
             </mat-form-field>
             <!-- //CAJA DIRECCION DE USUARIO -->
             <mat-form-field appearance="fill">
                 <mat-label>Direccion</mat-label>
-                <input formControlName="direccionUsuario" matInput>
+                <input formControlName="adress" matInput>
             </mat-form-field>
-            <span *ngIf="submitted && crearUsuario.invalid" class="badge badge-danger">Por favor completar los datos requeridos</span>
+            <span *ngIf="submitted && botonCrearUsuario.invalid" class="badge badge-danger">Por favor completar los datos requeridos</span>
             <button mat-stroked-button color="accent" class="cancel" routerLink="/dashboard/usuarios">Cancelar</button>
             <button  type="submit" mat-raised-button color="accent" >Aceptar</button>
         </form>

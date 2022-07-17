@@ -11,33 +11,67 @@ import { Usuarios } from '../../../models/usuarios';
 })
 
 export class CrearUsuarioComponent implements OnInit {
-  crearUsuario: FormGroup;
-  submitted=false;
+  botonCrearUsuario: FormGroup;
+  submitted = false;
   UsuariosService: any;
 
-  constructor(private fb: FormBuilder) { 
-    this.crearUsuario= this.fb.group({
-      nombreUsuario: ['', Validators.required],
-      tipoUsuario: ['', Validators.required],
-      contraseñaUsuario: ['', Validators.required],
-      emailUsuario: ['', Validators.required],
-      telefonoUsuario: ['', Validators.required],
-      direccionUsuario: ['', Validators.required],
 
-            
+  constructor(private fb: FormBuilder,
+    private_usuariosService: UsuariosService) {
+    this.botonCrearUsuario = this.fb.group({
+      username: ['', Validators.required],
+      role: ['', Validators.required],
+      password: ['', Validators.required],
+      email: ['', Validators.required],
+      phonenumber: ['', Validators.required],
+      adress: ['', Validators.required],
+
+
     })
   }
 
   ngOnInit(): void {
   }
+  //VALIDACION PARA QUE SE COMPLETEN TODOS LOS CAMPOS EN EL FORM 
+  agregarUsuario() {
+    this.submitted = true;
+    console.log(this.botonCrearUsuario.value);
+    this.UsuariosService.botonCrearUsuario(this.botonCrearUsuario.value).subscribe((result: any)=>{
+      console.log(result);
+    })
 
-  agregarUsuario(){
-    this.submitted=true;
-    if (this.crearUsuario.invalid){
+    if (this.botonCrearUsuario.invalid) {
       return;
     }
-    // this.UsuariosService.agregarUsuario(usuarios).subscribre
-    // console.log(this.crearUsuario);
+    
+    // const usuarios: any = {
+    //   id: this.crearUsuario.value.id,
+    //   email: this.crearUsuario.value.email,
+    //   password: this.crearUsuario.value.password,
+    //   adress: this.crearUsuario.value.adress,
+    //   phonenumber: this.crearUsuario.value.phonenumber,
+    //   role: this.crearUsuario.value.role,
+    //   username: this.crearUsuario.value.username,
+
+    // }
+    // this.UsuariosService.postUsuario(usuarios).then(()=>{
+    //   console.log ('se agrego con exito')
+    // })
   }
+  // onSubmit(){
+  //   const Usuarios=this.crearUsuario.value;
+  //   this.UsuariosService.postUsuario(Usuarios).subscribe(
+  //     (val: any)=>{
+  //       console.log(val);
+  
+  //     }
+  //   );
+
+  // }
+
+
+
 
 }
+
+
