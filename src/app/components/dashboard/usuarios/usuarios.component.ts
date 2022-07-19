@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UsuariosService } from '../../../services/usuarios.service';
 import { Usuarios } from '../../../interfaces/usuarios';
 import { CrearUsuarioComponent } from '../crear-usuario/crear-usuario.component';
-import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {MatDialog} from '@angular/material/dialog';
 
 
 @Component({
@@ -17,11 +17,21 @@ export class UsuariosComponent implements OnInit {
   ngOnInit(): void {
     this.getUsuarios();
     
+    
   }
   getUsuarios(){
     this.usuariosService.getUsuariosList().subscribe(
       (data)=>{
         this.usuariosList=data;
+      }
+    )
+  }
+ 
+
+  deleteUsuario(id:number){
+    this.usuariosService.deleteUsuario(id).subscribe(
+      (data)=>{
+        this.getUsuarios();
       }
     )
   }
@@ -44,3 +54,7 @@ export class UsuariosComponent implements OnInit {
   
 
 }
+function id(id: any) {
+  throw new Error('Function not implemented.');
+}
+

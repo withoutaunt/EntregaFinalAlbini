@@ -25,6 +25,13 @@ export class AlumnosComponent implements OnInit {
       }
     )
   }
+  deleteAlumno(id:number){
+    this.AlumnosService.deleteAlumno(id).subscribe(
+      (data)=>{
+        this.getAlumnos();
+      }
+    )
+  }
   openDialog() {
     const dialogRef = this.dialog.open(CrearAlumnoComponent);
 

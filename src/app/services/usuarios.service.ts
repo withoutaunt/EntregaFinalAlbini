@@ -8,7 +8,7 @@ import { Usuarios } from '../interfaces/usuarios';
   providedIn: 'root'
 })
 export class UsuariosService {
-  root_url= 'https://62c1291beff7f7856f0a0671.mockapi.io/api/v1/usuarios'
+  root_url= 'https://62c1291beff7f7856f0a0671.mockapi.io/api/v1/usuarios/'
   constructor(private http: HttpClient) { }
 
   getUsuariosList(): Observable<Usuarios[]>{
@@ -17,5 +17,8 @@ export class UsuariosService {
   getUsuarioSolo(id:number): Observable<Usuarios>{
     return this.http.get <Usuarios>(this.root_url + id)
   }
-   
+  
+  deleteUsuario(id:number): Observable<Usuarios>{
+    return this.http.delete<Usuarios>(this.root_url+id);
+  }
 }

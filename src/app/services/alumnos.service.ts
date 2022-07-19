@@ -16,6 +16,9 @@ export class AlumnosService {
   getAlumnoSolo(id:number): Observable<Alumnos>{
     return this.http.get <Alumnos>(this.root_url + id)
   }
+  deleteAlumno(id:number): Observable<Alumnos>{
+    return this.http.delete<Alumnos>(this.root_url+id);
+  }
 
 
 
