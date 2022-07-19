@@ -12,7 +12,19 @@ import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
 })
 export class UsuariosComponent implements OnInit {
   usuariosList: Usuarios[] = [];
-  constructor( private UsuariosService: UsuariosService, private dialog: MatDialog ) { }
+  constructor( private usuariosService: UsuariosService, private dialog: MatDialog ) { }
+  
+  ngOnInit(): void {
+    this.getUsuarios();
+    
+  }
+  getUsuarios(){
+    this.usuariosService.getUsuariosList().subscribe(
+      (data)=>{
+        this.usuariosList=data;
+      }
+    )
+  }
 
   openDialog() {
    this.dialog.open(CrearUsuarioComponent);{
@@ -26,9 +38,7 @@ export class UsuariosComponent implements OnInit {
   displayedColumns: string[] = ['id', 'nombreDeUsuario', 'email', 'telefono'];
   // dataSource = ELEMENT_DATA;
 
-  ngOnInit(): void {
-    
-  }
+
 
   
   

@@ -8,8 +8,14 @@ import { Usuarios } from '../interfaces/usuarios';
   providedIn: 'root'
 })
 export class UsuariosService {
-  root_url= 'http://localhost:3000/usuariosList'
+  root_url= 'https://62c1291beff7f7856f0a0671.mockapi.io/api/v1/usuarios'
   constructor(private http: HttpClient) { }
 
+  getUsuariosList(): Observable<Usuarios[]>{
+    return this.http.get <Usuarios[]>(this.root_url);
+  }
+  getUsuarioSolo(id:number): Observable<Usuarios>{
+    return this.http.get <Usuarios>(this.root_url + id)
+  }
    
 }
