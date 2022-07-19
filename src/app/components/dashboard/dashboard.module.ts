@@ -10,6 +10,7 @@ import { CursosComponent } from './cursos/cursos.component';
 import { LayoutComponent } from './layout/layout.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { CrearUsuarioComponent } from './crear-usuario/crear-usuario.component';
+import { CrearAlumnoComponent } from './crear-alumno/crear-alumno.component';
 
 
 
@@ -26,6 +27,7 @@ import { CrearUsuarioComponent } from './crear-usuario/crear-usuario.component';
     LayoutComponent,
     InicioComponent,
     CrearUsuarioComponent,
+    CrearAlumnoComponent,
 
 
 

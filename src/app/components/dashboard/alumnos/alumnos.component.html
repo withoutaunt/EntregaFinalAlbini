@@ -8,7 +8,7 @@
   <div class="card">
     <div class="card-body">
       <span class="h3">Panel de Alumnos</span>
-      <button mat-raised-button color="accent" class="botonAgregar" routerLink="/dashboard/crear-usuario">Agregar Alumno</button>
+      <button mat-raised-button color="accent" class="botonAgregar" (click)="openDialog()" >Agregar Alumno</button>
 
       <table class="table">
         <thead>

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AlumnosService } from 'src/app/services/alumnos.service';
 import { Alumnos } from '../../../interfaces/alumnos';
+import {MatDialog} from '@angular/material/dialog';
+import { CrearAlumnoComponent } from '../crear-alumno/crear-alumno.component';
 
 @Component({
   selector: 'app-alumnos',
@@ -9,7 +11,7 @@ import { Alumnos } from '../../../interfaces/alumnos';
 })
 export class AlumnosComponent implements OnInit {
   alumnosList:Alumnos[]=[];
-  constructor(private AlumnosService:AlumnosService) { }
+  constructor(private AlumnosService:AlumnosService, private dialog: MatDialog) { }
 
   displayedColumns: string[] = ['id', 'nombre', 'apellido', 'sexo'];
 
@@ -22,6 +24,11 @@ export class AlumnosComponent implements OnInit {
         this.alumnosList=data;
       }
     )
+  }
+  openDialog() {
+    const dialogRef = this.dialog.open(CrearAlumnoComponent);
+
+    
   }
 
 }

@@ -34,12 +34,13 @@ export class LoginComponent implements OnInit {
     const password=this.form.value.password;
 
 
-    if (usuario == 'adminlogin' && password =='123456'){
+    if (usuario == 'admin' && password =='123456'){
       this.router.navigate(['dashboard']);
 
-    }else{
+    }else if (usuario == 'user' && password =='123456')
+    {
       //ponerle un cartelito segun admin/user
-      this.form.reset();
+      this.router.navigate(['dashboard']);
     } 
 
   }
