@@ -1,5 +1,5 @@
 
-        <form [formGroup]="formCrearUsuario"><!-- </form> (ngSubmit)="agregarUsuario()"> -->
+        <form [formGroup]="formCrearUsuario" >
             <h1>Administración de usuarios</h1>
             <!-- //CAJA NOMBRE DE USUARIO -->
             <mat-form-field appearance="fill">
@@ -37,6 +37,6 @@
             <span *ngIf="submitted && formCrearUsuario.invalid" class="badge badge-danger">Por favor completar los datos requeridos</span>
             <div mat-dialog-action [align]="'end'">
             <button mat-stroked-button color="accent" class="cancel" mat-dialog-close>Cancelar</button>
-            <button  type="submit" mat-raised-button color="accent" (click)="aceptarAlumno()" >Aceptar</button>
+            <button  type="submit" mat-raised-button color="accent" (click)="aceptarUsuario()" >Aceptar</button>
             </div>
         </form>
