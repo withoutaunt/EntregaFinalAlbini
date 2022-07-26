@@ -16,22 +16,27 @@ export class AlumnosComponent implements OnInit {
   displayedColumns: string[] = ['id', 'nombre', 'apellido', 'sexo'];
 
   ngOnInit(): void {
-    this.getAlumnos();
-  }
-  getAlumnos(){
     this.AlumnosService.getAlumnosList().subscribe(
-      (data)=>{
-        this.alumnosList=data;
-      }
-    )
+      res=> {
+        this.alumnosList=res;
+      },
+      err=> console.error(err)
+    );
   }
-  deleteAlumno(id:number){
-    this.AlumnosService.deleteAlumno(id).subscribe(
-      (data)=>{
-        this.getAlumnos();
-      }
-    )
-  }
+  // getAlumnos(){
+  //   this.AlumnosService.getAlumnosList().subscribe(
+  //     (data)=>{
+  //       this.alumnosList=data;
+  //     }
+  //   )
+  // }
+  // deleteAlumno(id:number){
+  //   this.AlumnosService.deleteAlumno(id).subscribe(
+  //     (data)=>{
+  //       this.getAlumnos();
+  //     }
+  //   )
+  // }
   openDialog() {
     const dialogRef = this.dialog.open(CrearAlumnoComponent);
 

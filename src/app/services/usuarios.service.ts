@@ -15,10 +15,18 @@ export class UsuariosService {
     return this.http.get <Usuarios[]>(this.root_url);
   }
   getUsuarioSolo(id:number): Observable<Usuarios>{
-    return this.http.get <Usuarios>(this.root_url + id)
+    return this.http.get <Usuarios>(`${this.root_url}$ {id}`);
   }
   
   deleteUsuario(id:number): Observable<Usuarios>{
     return this.http.delete<Usuarios>(this.root_url+id);
+  }
+
+  saveUsuario(usuario: Usuarios){
+    return this.http.post (`${this.root_url}`, usuario);
+  }
+
+  updateUsuario(id: number, updatedUsuario: Usuarios){
+    return this.http.put (`${this.root_url}$ {id}`, updatedUsuario);
   }
 }
