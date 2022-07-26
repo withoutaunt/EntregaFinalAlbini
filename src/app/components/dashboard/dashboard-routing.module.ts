@@ -7,6 +7,7 @@ import { CursosComponent } from './cursos/cursos.component';
 import { DashboardComponent } from './dashboard.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
+import { DetalleUsuarioComponent } from './detalle-usuario/detalle-usuario.component';
 
 
 const routes: Routes = [
@@ -16,7 +17,8 @@ const routes: Routes = [
   {path: 'inicio', component: InicioComponent},
   {path: 'usuarios', component: UsuariosComponent},
   {path: 'cursos', component: CursosComponent},
-  {path:'crear-usuario', component: CrearUsuarioComponent}
+  {path:'crear-usuario', component: CrearUsuarioComponent},
+  {path:'detalles-usuario/:id', component: DetalleUsuarioComponent}
   ]},
   {path: 'login', component: LoginComponent},
   {path:'crear-usuario', component: CrearUsuarioComponent}
