@@ -50,7 +50,7 @@ export class AlumnosComponent implements OnInit {
   }
 
 
-  deleteUsuario(id: number) {
+  deleteAlumno(id: number) {
     this.AlumnosService.deleteAlumno(id).subscribe(
       (data) => {
         this.getAlumnos();
