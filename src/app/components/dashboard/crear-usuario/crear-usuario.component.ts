@@ -14,6 +14,7 @@ export class CrearUsuarioComponent implements OnInit {
   formCrearUsuario: FormGroup;
   submitted = false;
   UsuariosService: any;
+  usuarioToEdit: any;
 
 
   constructor(private fb: FormBuilder,
@@ -35,12 +36,23 @@ export class CrearUsuarioComponent implements OnInit {
   //VALIDACION PARA QUE SE COMPLETEN TODOS LOS CAMPOS EN EL FORM 
  
   onSubmit(){
-    const usuario=this.formCrearUsuario.value;
-    this.UsuariosService.saveUsuario(usuario).subscribe(
-      (val: any)=>{
-        console.log(val)
-      }
-    );
+    const usuario= this.formCrearUsuario.value;
+    if(!this.usuarioToEdit){
+      this.usuariosService.postUsuario(usuario).subscribe(
+        (val)=>{
+          console.log(val);
+          
+        }
+      );
+    }else{
+      usuario['id']=this.usuarioToEdit.id;
+      this.usuariosService.updateUsuario(usuario).subscribe(
+        (val)=>{
+          this.usuariosService.usuarioToEdit=null;
+          
+        }
+      )
+    }
   }
 
  

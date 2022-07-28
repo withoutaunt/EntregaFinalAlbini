@@ -8,6 +8,7 @@ import { Alumnos } from '../interfaces/alumnos';
 })
 export class AlumnosService {
   alumnoToEdit:any;
+  alumno:any;
   url= 'https://62c1291beff7f7856f0a0671.mockapi.io/api/v1/alumnos'
   constructor(private http: HttpClient) { }
 
@@ -25,11 +26,11 @@ export class AlumnosService {
     return this.http.delete<Alumnos>(this.url+`/${id}`);
   }
 
-  saveAlumno(alumno: any): Observable<Alumnos>{
+  postAlumno(alumno: any): Observable<Alumnos>{
     return this.http.post <Alumnos>(this.url, alumno)
   }
 
-  updateUsuario(alumno: Alumnos): Observable<Alumnos>{
+  updateAlumno(alumno: Alumnos): Observable<Alumnos>{
     return this.http.put <Alumnos> (this.url+`/${alumno.id}`,alumno)
   }
 

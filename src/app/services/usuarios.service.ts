@@ -26,7 +26,7 @@ export class UsuariosService {
     return this.http.delete<Usuarios>(this.url+`/${id}`);
   }
 
-  saveUsuario(usuario: any): Observable<Usuarios>{
+  postUsuario(usuario: any): Observable<Usuarios>{
     return this.http.post <Usuarios>(this.url, usuario)
   }
 
