@@ -12,6 +12,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatCardModule} from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatListModule} from '@angular/material/list';
 
 
 
@@ -32,7 +33,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatTableModule,
     MatCardModule,
     ReactiveFormsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatListModule
 
   ],
   exports:[
@@ -48,7 +50,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatTableModule,
     MatCardModule,
     ReactiveFormsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatListModule
   ]
 })
 export class SharedComponentsModule { }

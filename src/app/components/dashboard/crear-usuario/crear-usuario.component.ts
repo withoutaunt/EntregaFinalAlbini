@@ -17,7 +17,7 @@ export class CrearUsuarioComponent implements OnInit {
 
 
   constructor(private fb: FormBuilder,
-    private_usuariosService: UsuariosService) {
+    private usuariosService: UsuariosService) {
     this.formCrearUsuario = this.fb.group({
       username: ['', Validators.required],
       role: ['', Validators.required],
@@ -33,8 +33,14 @@ export class CrearUsuarioComponent implements OnInit {
   ngOnInit(): void {
   }
   //VALIDACION PARA QUE SE COMPLETEN TODOS LOS CAMPOS EN EL FORM 
-  aceptarUsuario(){
-    console.log(this.formCrearUsuario.value);
+ 
+  onSubmit(){
+    const usuario=this.formCrearUsuario.value;
+    this.UsuariosService.saveUsuario(usuario).subscribe(
+      (val: any)=>{
+        console.log(val)
+      }
+    );
   }
 
  

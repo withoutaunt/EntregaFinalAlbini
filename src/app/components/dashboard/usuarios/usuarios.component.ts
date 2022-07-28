@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { UsuariosService } from '../../../services/usuarios.service';
 import { Usuarios } from '../../../interfaces/usuarios';
+import { map, Observable, Subscription } from 'rxjs';
 import { CrearUsuarioComponent } from '../crear-usuario/crear-usuario.component';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,22 +13,33 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./usuarios.component.css']
 })
 export class UsuariosComponent implements OnInit {
+  usuarios:any= [];
   usuariosList: Usuarios[] = [];
-  
-  constructor(private usuariosService: UsuariosService, private dialog: MatDialog) { }
+  displayedColumns= ['id', 'nombreDeUsuario', 'email', 'telefono'];
+  subscriptions: Subscription = new Subscription;
+
+  constructor(private router:Router, private usuariosService: UsuariosService, private dialog: MatDialog) { }
 
   ngOnInit(): void {
+    this.subscriptions=new Subscription();
     this.getUsuarios();
 
 
   }
   getUsuarios() {
+    this.subscriptions.add(
     this.usuariosService.getUsuariosList().subscribe(
       (data) => {
         this.usuariosList = data;
       }
     )
+    )
   }
+  onClickRow(el:any){
+    this.usuariosService.usuarioToEdit=el;
+    this.router.navigate(['/usuarios']);
+  }
+
   getDetalleUsuario(id: number) {
     this.usuariosService.getUsuarioSolo(id).subscribe(
       (data) => {
@@ -35,6 +48,10 @@ export class UsuariosComponent implements OnInit {
 
 
   }
+  onGetUsuarioDetails(el:any){
+    this.router.navigate([`/detalles-usuario/${el.id}`]);
+  }
+
 
   deleteUsuario(id: number) {
     this.usuariosService.deleteUsuario(id).subscribe(
@@ -51,9 +68,14 @@ export class UsuariosComponent implements OnInit {
 
 
   }
+  ngOnDestroy(): void {
+    if(this.subscriptions){
+      this.subscriptions.unsubscribe();
+    }
+  }
 
 
-  displayedColumns: string[] = ['id', 'nombreDeUsuario', 'email', 'telefono'];
+  
   // dataSource = ELEMENT_DATA;
 
 
