@@ -15,7 +15,7 @@ export class UsuariosService {
     return this.http.get <Usuarios[]>(this.root_url);
   }
   getUsuarioSolo(id:number): Observable<Usuarios>{
-    return this.http.get <Usuarios>(`${this.root_url}$ {id}`);
+    return this.http.get <Usuarios>(this.root_url + id)
   }
   
   deleteUsuario(id:number): Observable<Usuarios>{
