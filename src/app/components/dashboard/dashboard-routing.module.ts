@@ -8,7 +8,7 @@ import { DashboardComponent } from './dashboard.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { DetalleUsuarioComponent } from './detalle-usuario/detalle-usuario.component';
-
+import { DetalleAlumnoComponent } from './detalle-alumno/detalle-alumno.component';
 
 const routes: Routes = [
   {path: '', component: DashboardComponent,children: [
@@ -18,7 +18,8 @@ const routes: Routes = [
   {path: 'usuarios', component: UsuariosComponent},
   {path: 'cursos', component: CursosComponent},
   {path:'crear-usuario', component: CrearUsuarioComponent},
-  {path:'detalles-usuario/:id', component: DetalleUsuarioComponent}
+  {path:'detalles-usuario/:id', component: DetalleUsuarioComponent},
+  {path:'detalles-alumno/:id', component: DetalleAlumnoComponent}
   ]},
   {path: 'login', component: LoginComponent},
   {path:'crear-usuario', component: CrearUsuarioComponent}

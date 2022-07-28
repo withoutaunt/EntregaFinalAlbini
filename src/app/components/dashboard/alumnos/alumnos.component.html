@@ -33,7 +33,7 @@
               <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon" >
                 <mat-icon>delete</mat-icon>
               </button>
-              <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon"
+              <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon" (click)="getDetalleAlumno(alumno.id)" [routerLink]="['/dashboard/detalles-alumno', alumno.id]"
                 >
                 <mat-icon>info</mat-icon>
               </button>

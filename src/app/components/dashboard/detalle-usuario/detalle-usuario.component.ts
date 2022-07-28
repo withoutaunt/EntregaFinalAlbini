@@ -25,9 +25,6 @@ export class DetalleUsuarioComponent implements OnInit {
 
     
 
-    // this.usuariosService.getUsuarioSolo(this.usuarioId).subscribe(data=>{
-    //   console.log(data)
-    // })
   
   
 

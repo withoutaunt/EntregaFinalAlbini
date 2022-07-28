@@ -12,6 +12,7 @@ import { InicioComponent } from './inicio/inicio.component';
 import { CrearUsuarioComponent } from './crear-usuario/crear-usuario.component';
 import { CrearAlumnoComponent } from './crear-alumno/crear-alumno.component';
 import { DetalleUsuarioComponent } from './detalle-usuario/detalle-usuario.component';
+import { DetalleAlumnoComponent } from './detalle-alumno/detalle-alumno.component';
 
 
 
@@ -30,6 +31,7 @@ import { DetalleUsuarioComponent } from './detalle-usuario/detalle-usuario.compo
     CrearUsuarioComponent,
     CrearAlumnoComponent,
     DetalleUsuarioComponent,
+    DetalleAlumnoComponent,
 
 
 

@@ -1,0 +1,28 @@
+<p>
+    <mat-toolbar class="toolNombres">
+      <span>Detalle de alumno {{alumnoToShow.nombre}} {{alumnoToShow.apellido}}</span>
+    </mat-toolbar>
+</p>
+
+
+    <div class="card"*ngIf="alumnoToShow">
+      <div class="card-body" >
+        <table class="table"  >
+          <thead>
+            <tr>
+              <th >ID: {{alumnoToShow.id}}</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <mat-list role="list">
+                <mat-list-item role="listitem">Nombre:  {{alumnoToShow.nombre}}</mat-list-item>
+                <mat-list-item role="listitem">Apellido:  {{alumnoToShow.apellido}}</mat-list-item>
+                <mat-list-item role="listitem">Curso:  {{alumnoToShow.curso}}</mat-list-item>
+                <mat-list-item role="listitem">Sexo:  {{alumnoToShow.sexo}}</mat-list-item>
+
+            </mat-list>
+          </tbody>
+        </table>
+      </div>
+    </div>
