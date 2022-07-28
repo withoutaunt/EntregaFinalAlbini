@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UsuariosService } from '../../../services/usuarios.service';
 import { Usuarios } from '../../../interfaces/usuarios';
 import { CrearUsuarioComponent } from '../crear-usuario/crear-usuario.component';
-import {MatDialog} from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 
 
 @Component({
@@ -12,46 +12,54 @@ import {MatDialog} from '@angular/material/dialog';
 })
 export class UsuariosComponent implements OnInit {
   usuariosList: Usuarios[] = [];
-  constructor( private usuariosService: UsuariosService, private dialog: MatDialog ) { }
   
+  constructor(private usuariosService: UsuariosService, private dialog: MatDialog) { }
+
   ngOnInit(): void {
     this.getUsuarios();
-    
-    
+
+
   }
-  getUsuarios(){
+  getUsuarios() {
     this.usuariosService.getUsuariosList().subscribe(
-      (data)=>{
-        this.usuariosList=data;
+      (data) => {
+        this.usuariosList = data;
       }
     )
   }
- 
+  getDetalleUsuario(id: number) {
+    this.usuariosService.getUsuarioSolo(id).subscribe(
+      (data) => {
+        console.log(data);}
+    )
 
-  deleteUsuario(id:number){
+
+  }
+
+  deleteUsuario(id: number) {
     this.usuariosService.deleteUsuario(id).subscribe(
-      (data)=>{
+      (data) => {
         this.getUsuarios();
       }
     )
   }
 
   openDialog() {
-   this.dialog.open(CrearUsuarioComponent);{
+    this.dialog.open(CrearUsuarioComponent); {
 
-   }
+    }
 
-   
+
   }
- 
+
 
   displayedColumns: string[] = ['id', 'nombreDeUsuario', 'email', 'telefono'];
   // dataSource = ELEMENT_DATA;
 
 
 
-  
-  
+
+
 
 }
 function id(id: any) {

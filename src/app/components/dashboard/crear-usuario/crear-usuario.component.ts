@@ -33,9 +33,11 @@ export class CrearUsuarioComponent implements OnInit {
   ngOnInit(): void {
   }
   //VALIDACION PARA QUE SE COMPLETEN TODOS LOS CAMPOS EN EL FORM 
-  aceptarAlumno(){
+  aceptarUsuario(){
     console.log(this.formCrearUsuario.value);
   }
+
+ 
   
  }
 
