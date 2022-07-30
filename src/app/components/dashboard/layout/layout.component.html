@@ -4,6 +4,9 @@
         (click)="opened=!opened">
         <mat-icon>menu</mat-icon>
     </button>
+    <button mat-icon-button color="basic" routerLink="inicio">
+        <mat-icon>home</mat-icon>
+      </button>
     <span>WebCampus</span>
     <span class="example-spacer"></span>
     <span>Bienvenido, XXXXX !</span>
@@ -19,7 +22,6 @@
 
 <mat-sidenav-container>
     <mat-sidenav [(opened)]="opened" mode="side">
-        <button class='side' mat-raised-button color="accent" routerLink="/dashboard/inicio"><a >Inicio</a></button>
         <button class='side' mat-raised-button color="accent" routerLink="/dashboard/alumnos"><a >Alumnos</a></button>
         <button class='side' mat-raised-button color="accent" routerLink="/dashboard/usuarios"><a >Usuarios</a></button>
         <button class='side' mat-raised-button color="accent" routerLink="/dashboard/cursos"><a >Cursos</a></button>
