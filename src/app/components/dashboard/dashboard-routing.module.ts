@@ -9,6 +9,8 @@ import { InicioComponent } from './inicio/inicio.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { DetalleUsuarioComponent } from './detalle-usuario/detalle-usuario.component';
 import { DetalleAlumnoComponent } from './detalle-alumno/detalle-alumno.component';
+import { CursoAngularComponent } from './cursos/curso-angular/curso-angular.component';
+import { CursoReactComponent } from './cursos/curso-react/curso-react.component';
 
 const routes: Routes = [
   {path: '', component: DashboardComponent,children: [
@@ -16,14 +18,16 @@ const routes: Routes = [
   {path: 'alumnos', component: AlumnosComponent},
   {path: 'inicio', component: InicioComponent},
   {path: 'usuarios', component: UsuariosComponent},
-  {path: 'cursos', component: CursosComponent},
+  {path: 'cursos', component: CursosComponent, children:[
+    {path:'curso-angular', component: CursoAngularComponent},
+    {path:'curso-react', component: CursoReactComponent},
+  ]},
   {path:'crear-usuario', component: CrearUsuarioComponent},
   {path:'detalles-usuario/:id', component: DetalleUsuarioComponent},
   {path:'detalles-alumno/:id', component: DetalleAlumnoComponent}
   ]},
   {path: 'login', component: LoginComponent},
-  {path:'crear-usuario', component: CrearUsuarioComponent}
-
+ 
 ];
 
 @NgModule({
