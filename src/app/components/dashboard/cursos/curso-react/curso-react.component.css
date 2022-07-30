@@ -1,0 +1,19 @@
+table {
+    width: 40%;   
+    margin-top: 40px;
+    position: absolute;
+    margin-left: 30%;
+    background-color: rgba(125, 88, 160, 0.493);    
+    border-radius:10px;
+    
+}
+img{
+    width: 10%;
+    position:absolute;
+    display: flex;
+    margin-top: 5px;
+    margin-left: 89%;
+}
+h1{
+    text-align: center;
+}
