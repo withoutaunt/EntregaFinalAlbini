@@ -24,7 +24,7 @@
             <td>{{usuario.username}}</td>
             <td>{{usuario.email}}</td>
             <td>
-              <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon">
+              <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon"  (click)="onClickRow(usuario)">
                 <mat-icon>edit</mat-icon>
               </button>
               <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon" (click)="deleteUsuario(usuario.id)">

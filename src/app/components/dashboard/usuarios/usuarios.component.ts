@@ -37,7 +37,7 @@ export class UsuariosComponent implements OnInit {
   }
   onClickRow(el:any){
     this.usuariosService.usuarioToEdit=el;
-    this.router.navigate(['/usuarios']);
+    this.router.navigate(['/editar-usuario']);
   }
 
   getDetalleUsuario(id: number) {
