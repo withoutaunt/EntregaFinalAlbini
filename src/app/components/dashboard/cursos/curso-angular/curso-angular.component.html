@@ -11,12 +11,12 @@
         <th></th>
       </tr>
     </thead>
-    <tbody>
-      <tr>
-        <th></th>
-        <td></td>
-        <td></td>
-        <td></td>
+    <tbody >
+      <tr *ngFor="let alumno of alumnosList">
+        <th *ngIf="alumno.curso == 'angular'" >{{alumno.id}}</th>
+        <td *ngIf="alumno.curso == 'angular'">{{alumno.nombre}}</td>
+        <td *ngIf="alumno.curso == 'angular'">{{alumno.apellido}}</td>
+        <td *ngIf="alumno.curso == 'angular'">{{alumno.sexo}}</td>
       </tr>
 
     </tbody>
