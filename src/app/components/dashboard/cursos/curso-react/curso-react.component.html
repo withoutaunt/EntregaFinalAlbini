@@ -12,11 +12,11 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th></th>
-        <td></td>
-        <td></td>
-        <td></td>
+      <tr *ngFor="let alumno of alumnosList">
+        <th *ngIf="alumno.curso == 'react'" >{{alumno.id}}</th>
+        <td *ngIf="alumno.curso == 'react'">{{alumno.nombre}}</td>
+        <td *ngIf="alumno.curso == 'react'">{{alumno.apellido}}</td>
+        <td *ngIf="alumno.curso == 'react'">{{alumno.sexo}}</td>
       </tr>
 
     </tbody>

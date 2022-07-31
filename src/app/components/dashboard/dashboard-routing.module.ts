@@ -11,6 +11,7 @@ import { DetalleUsuarioComponent } from './detalle-usuario/detalle-usuario.compo
 import { DetalleAlumnoComponent } from './detalle-alumno/detalle-alumno.component';
 import { CursoAngularComponent } from './cursos/curso-angular/curso-angular.component';
 import { CursoReactComponent } from './cursos/curso-react/curso-react.component';
+import { InscribirAlumnoComponent } from './cursos/inscribir-alumno/inscribir-alumno.component';
 
 const routes: Routes = [
   {path: '', component: DashboardComponent,children: [
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path: 'cursos', component: CursosComponent, children:[
     {path:'curso-angular', component: CursoAngularComponent},
     {path:'curso-react', component: CursoReactComponent},
+    {path:'inscribir-alumno', component: InscribirAlumnoComponent},
   ]},
   {path:'crear-usuario', component: CrearUsuarioComponent},
   {path:'detalles-usuario/:id', component: DetalleUsuarioComponent},

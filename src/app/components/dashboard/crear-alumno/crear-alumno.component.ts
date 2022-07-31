@@ -28,7 +28,7 @@ export class CrearAlumnoComponent implements OnInit {
       nombre: ['', Validators.required],
       sexo: ['', Validators.required],
       apellido: ['', Validators.required],
-      cursos: ['', Validators.required],
+      curso: ['', Validators.required],
      
     })
 
@@ -37,7 +37,7 @@ export class CrearAlumnoComponent implements OnInit {
       this.formCrearAlumno.get('nombre')?.patchValue(this.alumnoToEdit.nombre);
       this.formCrearAlumno.get('sexo')?.patchValue(this.alumnoToEdit.sexo);
       this.formCrearAlumno.get('apellido')?.patchValue(this.alumnoToEdit.apellido);
-      this.formCrearAlumno.get('cursos')?.patchValue(this.alumnoToEdit.cursos);
+      this.formCrearAlumno.get('curso')?.patchValue(this.alumnoToEdit.cursos);
     }
   }
 
